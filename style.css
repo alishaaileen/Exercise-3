@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body{
+    background: linear-gradient(#000, #123070);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.search{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.table{
+    background-color: #ffffff00;
+    width: 150%;
+}
+.table th, td{
+    color: white !important;
+}
