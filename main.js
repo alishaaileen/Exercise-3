@@ -1,10 +1,15 @@
-// Generating Table Head
+/**
+ * Fetch data from Swapi
+ */
 
 async function fetchData () {
   const temp = await fetch('https://swapi.co/api/planets/')
   return temp.json()
 }
 
+/**
+ * Generating Table Head
+ */
 
 function generateTableHead(table, data){
   var tHead = table.createTHead()
@@ -17,9 +22,9 @@ function generateTableHead(table, data){
   }
 }
 
-// =============================================
-
-// Generating Table Body
+/**
+ * Generating Table Body
+ */
 
 function generateTable(table, data) {
   for (let element of data) {
@@ -32,26 +37,13 @@ function generateTable(table, data) {
   }
 }
 
-// =============================================
-
-// Fetch data from web and put it into the table
+/**
+ * Fetch data from web and put it into the table
+ */
 
 function makeTable(table, data) {
-
-  console.log(data)
   let heads = data[0]
 
-  // fetch('https://swapi.co/api/planets/')
-  //   .then((response) => {
-  //     return response.json()
-  //   })
-  //   .then((data) => {
-  //     console.log(data)
-  //     console.log(data.results[0].name)
-
-  //     var heads = Object.keys(data.results[0])
-      generateTableHead(table, heads)
-      generateTable(table, data);
+  generateTableHead(table, heads)
+  generateTable(table, data);
 }
-
-// =============================================

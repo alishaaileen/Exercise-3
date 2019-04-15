@@ -49,7 +49,7 @@
         let filteredData = data2.results
         filteredData.toLowerCase()
 
-        if(event.target.value) {
+        if(event.target.value) { // jika ada input search terisi
           filteredData = filteredData.filter(item => item.name === event.target.value)
         }
 
