@@ -44,6 +44,10 @@ function generateTable(table, data) {
 function makeTable(table, data) {
   let heads = data[0]
 
+  while (table.firstChild) {
+    table.removeChild(table.firstChild)
+  }
+
   generateTableHead(table, heads)
   generateTable(table, data);
 }

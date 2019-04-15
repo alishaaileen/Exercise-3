@@ -49,10 +49,6 @@
 
         if(event.target.value) { // jika ada input search terisi
           let length = event.target.value.length
-
-          while (table.firstChild) {
-            table.removeChild(table.firstChild)
-          }
           
           filteredData = filteredData.filter(item => item.name.toLowerCase().substr(0, length) === event.target.value.toLowerCase())
         }
