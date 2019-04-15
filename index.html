@@ -32,7 +32,7 @@
       <div style="overflow-x: scroll;">
         <table id="table" class="table"></table>
       </div>
-      
+
     </div>
   </section>
 
@@ -43,14 +43,18 @@
       let inputSearch = document.getElementById('input')
       let table = document.getElementById('table')
 
-
       inputSearch.addEventListener('input', async (event) => {
         let data2 = await fetchData()
         let filteredData = data2.results
-        filteredData.toLowerCase()
 
         if(event.target.value) { // jika ada input search terisi
-          filteredData = filteredData.filter(item => item.name === event.target.value)
+          let length = event.target.value.length
+
+          while (table.firstChild) {
+            table.removeChild(table.firstChild)
+          }
+          
+          filteredData = filteredData.filter(item => item.name.toLowerCase().substr(0, length) === event.target.value.toLowerCase())
         }
 
         makeTable(table, filteredData)
