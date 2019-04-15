@@ -21,7 +21,7 @@
       <div class="search">
         <div class="field">
           <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Searching for a spesific one?">
+            <input id="input" class="input" type="text" placeholder="Searching for a spesific one?">
             <span class="icon is-small is-left">
               <i class="fas fa-search"></i>
             </span>
@@ -30,12 +30,34 @@
       </div>
 
       <div style="overflow-x: scroll;">
-        <table class="table"></table>
+        <table id="table" class="table"></table>
       </div>
       
     </div>
   </section>
 
   <script src="main.js"></script>
+  <script>
+    (async function () {
+      let data = await fetchData()
+      let inputSearch = document.getElementById('input')
+      let table = document.getElementById('table')
+
+
+      inputSearch.addEventListener('input', async (event) => {
+        let data2 = await fetchData()
+        let filteredData = data2.results
+        filteredData.toLowerCase()
+
+        if(event.target.value) {
+          filteredData = filteredData.filter(item => item.name === event.target.value)
+        }
+
+        makeTable(table, filteredData)
+      })
+
+      makeTable(table, data.results)
+    })()
+  </script>
   </body>
 </html>
