@@ -5,10 +5,14 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
+/* Search bar */
+
 .search{
     width: 70%;
     margin: 50px auto;
 }
+
+/* Table */
 
 .table{
     background-color: #ffffff00;
@@ -16,4 +20,38 @@ body{
 }
 .table th, td{
     color: white !important;
+}
+
+/* Footer */
+
+.socmeds{
+    width: 30%;
+    margin: 0 auto;
+    border-bottom: 2px solid #bebebe;
+}
+.socmed:hover{
+    animation: lompat 0.25s forwards 0s alternate infinite;
+    -webkit-animation: lompat 0.25s forwards 0s alternate infinite;
+}
+@keyframes lompat {
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+@-webkit-keyframes lompat{
+    0%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .socmeds{
+        width: 60%;
+    }
 }
