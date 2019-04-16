@@ -1,6 +1,8 @@
 # What can this web do?
-It can show you Star Wars Planet's info <br>
-and you can search for spesific planet.
+It is able show you Star Wars Planet's info <br>
+and also able to search for spesific planet.
+
+P.S. : search by planet name
 
 # Requirement(s)
 <ul>
